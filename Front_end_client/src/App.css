@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  background: rgba(13, 13, 13, 0.2);
+  z-index: 2;
+}
+.nav-link {
+  background-color: rgba(13, 13, 13, 0.5);
+}
+.nav-linkhover:hover {
+  background-color: rgba(13, 13, 13, 0.2);
+}
+.sidebar {
+  transition: left 0.7s ease;
+}
+.instagram-background {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #a12bff);
+}
+.facebook-background {
+  background: #1877f2;
+}
+.tiktok-background {
+  background-color: #010101;
+}

@@ -1,7 +1,6 @@
 const express = require("express");
 const route = express.Router();
 const passport = require("passport");
-const Admin = require("../models/Admin");
 const {
   registerAdmin,
   LoginAdmin,
