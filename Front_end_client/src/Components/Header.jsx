@@ -47,7 +47,7 @@ const Header = () => {
       }}
     >
       {isOpen && <LeftSidebar />}
-      <div className="flex flex-col justify-start items-center fixed top-0 w-full h-fit bg-custom-green background overflow-x-hidden z-40 ">
+      <div className="flex flex-col justify-start items-center fixed top-0 w-full h-fit bg-custom-green background overflow-x-hidden z-40 mb-28">
         <div
           className={
             isMobile
