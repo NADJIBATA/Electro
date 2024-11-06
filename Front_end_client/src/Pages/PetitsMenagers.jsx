@@ -7,8 +7,8 @@ const PetitsMenagers = () => {
   };
   window.addEventListener("resize", handelIsMobile);
   return (
-    <div className="bg-red-500 w-full h-full">
-      <h1>nadjib__atamnia</h1>
+    <div className="relative z-40 h-fit min-h-full w-7/12 bg-white ">
+      
     </div>
   );
 };
