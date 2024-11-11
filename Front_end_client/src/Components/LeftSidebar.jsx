@@ -33,7 +33,7 @@ const LeftSidebar = () => {
     {
       name: "PRODUITS",
       path: "/products",
-      icon: <FaProductHunt />,
+      icon: <FaProductHunt />
     },
   ];
   return (
