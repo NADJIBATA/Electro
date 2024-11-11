@@ -10,15 +10,15 @@ const Home = () => {
   window.addEventListener("resize", handelIsMobile);
   return (
     <div
-      className={`relative w-full h-fit min-h-full flex flex-col items-center bg-custom-white z-30 `}
+      className={`relative w-full h-full flex flex-col items-center  z-20 `}
     >
       <Header />
       <div
-        className={`relative  h-full   overflow-y-scroll mb-2 z-30 w-7/12 bg-white ${
-          isMobile ? "mt-16" : "mt-28"
+        className={`relative h-full overflow-y-scroll z-30 w-full flex justify-center items-center  bg-custom-white  ${
+          isMobile ? "mt-12" : "mt-24"
         } `}
       >
-        <Outlet className="bg-blue-500" />
+        <Outlet  />
       </div>
     </div>
   );
