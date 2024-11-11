@@ -7,8 +7,7 @@ const Brands = () => {
   };
   window.addEventListener("resize", handelIsMobile);
   return (
-    <div>
-      <h1>nadjib__atamnia</h1>
+    <div className="relative  z-40 h-fit min-h-full  w-7/12 bg-white ">
     </div>
   );
 };
