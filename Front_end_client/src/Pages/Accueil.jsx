@@ -7,10 +7,6 @@ const Accueil = () => {
   };
   return (
     <div className="relative  z-40 h-fit min-h-full  w-7/12 bg-white ">
-    
-   
-
-
     </div>
   );
 };
