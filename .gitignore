@@ -1,0 +1,27 @@
+# Dépendances
+node_modules/
+
+# Secrets — ne JAMAIS commiter
+.env
+.env.*
+!.env.example
+
+# Builds
+dist/
+build/
+coverage/
+
+# Uploads locaux
+Backend/Uploads/
+Backend/uploads/
+
+# Logs / OS / éditeurs
+*.log
+npm-debug.log*
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Base locale de dev (FerretDB/SQLite)
+.devdb/
