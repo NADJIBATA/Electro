@@ -17,7 +17,7 @@ const taxonomyRoutes = require("./routes/taxonomy");
 
 const createApp = () => {
   const app = express();
-  app.set("trust proxy", 1); // derrière le proxy de Render / Vercel
+  app.set("trust proxy", env.TRUST_PROXY); // derrière Render (et Vercel)
   app.disable("x-powered-by");
 
   app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } }));

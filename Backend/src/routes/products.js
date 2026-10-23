@@ -18,7 +18,7 @@ const objectId = Joi.string().hex().length(24);
 // En multipart, les tableaux arrivent en JSON ou en lignes séparées
 const stringList = Joi.alternatives().try(
   Joi.array().items(Joi.string().trim().max(200)),
-  Joi.string().custom((value, helpers) => {
+  Joi.string().empty("").custom((value, helpers) => {
     const v = value.trim();
     if (!v) return [];
     if (v.startsWith("[")) {

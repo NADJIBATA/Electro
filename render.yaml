@@ -1,0 +1,56 @@
+# Blueprint Render : déploie l'API (dossier Backend).
+# Render > New > Blueprint > choisir ce dépôt. Les variables "sync: false" sont demandées à la création.
+services:
+  - type: web
+    name: electro-api
+    runtime: node
+    plan: free
+    region: frankfurt
+    rootDir: Backend
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "22"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: COOKIE_SAMESITE
+        value: lax
+      # Navigateur -> Vercel -> Render -> API : 2 proxys
+      - key: TRUST_PROXY
+        value: "2"
+      - key: CHARGILY_MODE
+        value: test
+      - key: STORE_NAME
+        value: WebStar Electro
+      - key: SHIPPING_FEE
+        value: "600"
+      - key: MONGODB_URI
+        sync: false
+      - key: CLIENT_URL
+        sync: false
+      - key: API_PUBLIC_URL
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: CHARGILY_SECRET_KEY
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: MAIL_FROM
+        sync: false
