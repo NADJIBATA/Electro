@@ -1,9 +1,56 @@
-html,
-body,
-#root {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  :focus-visible {
+    outline: 3px solid #f5c400;
+    outline-offset: 2px;
+  }
+  h1, h2, h3 {
+    @apply font-cond font-semibold tracking-tight;
+    line-height: 1.1;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-brand-deep text-white hover:bg-ink;
+  }
+  .btn-secondary {
+    @apply btn border border-steel-dark bg-white text-ink hover:border-ink;
+  }
+  .btn-danger {
+    @apply btn border border-danger/40 bg-white text-danger hover:bg-danger hover:text-white;
+  }
+  .input {
+    @apply w-full rounded-md border border-steel-dark bg-white px-3 py-2.5 text-ink placeholder:text-ink-muted/70 focus:border-brand-deep focus:outline-none focus:ring-2 focus:ring-brand/25;
+  }
+  .label {
+    @apply mb-1 block text-sm font-medium text-ink;
+  }
+  .price {
+    @apply font-cond font-bold tabular-nums tracking-tight;
+  }
+  .panel {
+    @apply rounded-lg border border-steel bg-white;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
