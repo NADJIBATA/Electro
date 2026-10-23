@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main, prod-ready]
+  pull_request:
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      mongo:
+        image: mongo:8
+        ports: ["27017:27017"]
+    defaults:
+      run:
+        working-directory: Backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: Backend/package-lock.json
+      - run: npm ci
+      - run: npm test
+        env:
+          MONGODB_URI_TEST: mongodb://127.0.0.1:27017
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Front_end_client
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: Front_end_client/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build

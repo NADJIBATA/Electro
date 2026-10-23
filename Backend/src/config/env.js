@@ -18,6 +18,8 @@ const env = {
   isProd,
   isTest,
   PORT: toInt(process.env.PORT, 3000),
+  // Nombre de proxys devant l'API (Render = 1 ; Vercel + Render = 2) pour retrouver la vraie IP client
+  TRUST_PROXY: toInt(process.env.TRUST_PROXY, 1),
   MONGODB_URI: process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/electro",
 
   // URL publique du front (liens dans les emails, retours de paiement)
@@ -60,7 +62,7 @@ const env = {
   MAIL_FROM: process.env.MAIL_FROM || "Electro <no-reply@electro.local>",
   ADMIN_NOTIFY_EMAIL: process.env.ADMIN_NOTIFY_EMAIL || process.env.ADMIN_EMAIL || "",
 
-  STORE_NAME: process.env.STORE_NAME || "Electro",
+  STORE_NAME: process.env.STORE_NAME || "WebStar Electro",
 };
 
 env.cloudinaryEnabled = Boolean(

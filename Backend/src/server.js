@@ -18,6 +18,10 @@ const start = async () => {
     );
   });
 
+  if (env.isProd && !env.cloudinaryEnabled) {
+    console.warn("⚠️  Cloudinary n'est pas configuré : l'ajout de photos échouera en production.");
+  }
+
   // Libère le stock des paiements en ligne abandonnés
   const timer = setInterval(() => {
     expireStaleOnlineOrders()
