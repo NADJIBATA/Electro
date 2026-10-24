@@ -12,7 +12,8 @@
     "dev": "nodemon src/server.js",
     "seed": "node scripts/seed.js",
     "create-admin": "node scripts/createAdmin.js",
-    "test": "jest --runInBand"
+    "test": "jest --runInBand",
+    "check-db": "node scripts/checkDb.js"
   },
   "jest": {
     "testEnvironment": "node",

@@ -62,7 +62,7 @@ const env = {
   MAIL_FROM: process.env.MAIL_FROM || "Electro <no-reply@electro.local>",
   ADMIN_NOTIFY_EMAIL: process.env.ADMIN_NOTIFY_EMAIL || process.env.ADMIN_EMAIL || "",
 
-  STORE_NAME: process.env.STORE_NAME || "WebStar Electro",
+  STORE_NAME: process.env.STORE_NAME || "Golden Electro",
 };
 
 env.cloudinaryEnabled = Boolean(

@@ -30,7 +30,7 @@ const PAYMENT_LABELS = { cod: "Paiement à la livraison", online: "Paiement en l
 
 const layout = (title, body) => `
 <div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;color:#222">
-  <div style="background:#1b9602;color:#fff;padding:16px 20px;font-size:20px;font-weight:bold">${escapeHtml(env.STORE_NAME)}</div>
+  <div style="background:#121a26;color:#d4a21a;padding:16px 20px;font-size:20px;font-weight:bold">${escapeHtml(env.STORE_NAME)}</div>
   <div style="padding:20px;border:1px solid #e5e5e5;border-top:0">
     <h2 style="margin-top:0;font-size:18px">${escapeHtml(title)}</h2>
     ${body}
